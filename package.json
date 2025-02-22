@@ -5,6 +5,10 @@
 	"scripts": {
 		"start": "nodemon ./dist/main.js",
 		"build": "tsc",
+		"dev": "tsx watch --include ./src --exclude ./src/**/*.spec.ts --clear-screen=false ./src/main.ts",
+		"dev:inspect": "tsx --inspect-brk ./src/main.ts",
+		"lint": "eslint src --ext .ts",
+		"lint:fix": "eslint src --ext .ts --fix",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"type": "module",
@@ -14,10 +18,21 @@
 	"description": "",
 	"dependencies": {
 		"express": "^4.21.2",
+		"inversify": "^6.2.2",
+		"reflect-metadata": "^0.2.2",
 		"tslog": "^4.9.3"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.21.0",
 		"@types/express": "^5.0.0",
-		"nodemon": "^3.1.9"
+		"@types/node": "^22.13.5",
+		"eslint": "^9.21.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"globals": "^16.0.0",
+		"prettier": "^3.5.2",
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.24.1"
 	}
 }
